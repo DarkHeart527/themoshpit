@@ -48,7 +48,7 @@ let start = () => {
 					secure.clear('passkey');
 					location = location;
 				};
-				document.getElementById('login').innerHTML = 'Log Out of The Mosh Pit';
+				document.getElementById('login').innerHTML = 'Log Out of The Moshpit';
 			} else {
 				document.getElementById('moshpitPrivate').innerHTML = '';
 				if (document.body.attributes.accessrequired) {
