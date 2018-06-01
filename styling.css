@@ -1,0 +1,57 @@
+
+* {
+ color: initial;
+ font-size: initial;
+}
+body {
+ margin: 0px;
+}
+.page {
+ height: 75%;
+ width: 100%;
+}
+footer {
+ width: 100%;
+ height: 10%;
+ background-color: rgba(155, 155, 155, 0.7);
+ bottom: 0px;
+ left: 0px;
+}
+.links {
+ position: absolute;
+ left: 0px;
+ background-color: green;
+ top: -100%;
+ transition: opacity 1.5s, top 1s;
+ width: 100%;
+ height: 50%;
+ border-bottom: 25px solid green;
+}
+.links div {
+ margin-left: 25px;
+}
+header {
+ width: 100%;
+ height: 15%;
+ background-color: rgba(155, 155, 155, 0.7);
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr;
+ justify-items: center;
+ align-items: center;
+ z-index: 1;
+}
+.explore {
+ font-size: 30px;
+ cursor: pointer;
+}
+.explore:hover {
+ color: red;
+}
+#login {
+ font-size: 30px;
+ cursor: pointer;
+}
+.links div a {
+ margin-right: 25px;
+
+}

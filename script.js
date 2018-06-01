@@ -18,6 +18,18 @@ let start = () => {
 		}
 	}
 	
+	
+	let search = document.getElementById('search');
+	search.onkeydown = function() {
+	}
+	
+	// Link setup append
+	
+	let source = 'linkSetup.js';
+	let nScript = document.createElement('script');
+	nScript.src = source;
+	document.body.appendChild(nScript);
+	nScript.onload = function() {
 	let moshPitLogin = document.getElementById('login');
 	moshPitLogin.onclick = function() {
 		let pass = prompt('Mosh Pit Password');
@@ -28,30 +40,26 @@ let start = () => {
 			alert('Password is Wrong');
 		}
 	}
-	
-	let search = document.getElementById('search');
-	search.onkeydown = function() {
-		
-	}
 	let password = 'wdfna24j';
-	if (secure.load('passkey')) {
-		if (secure.load('passkey') == password) {
-			console.log('Logged in');
-			document.getElementById('login').onclick = function() {
-				secure.clear('passkey');
-				location = location;
-			};
-			document.getElementById('login').innerHTML = 'Log Out of The Mosh Pit';
+		if (secure.load('passkey')) {
+			if (secure.load('passkey') == password) {
+				console.log('Logged in');
+				document.getElementById('login').onclick = function() {
+					secure.clear('passkey');
+					location = location;
+				};
+				document.getElementById('login').innerHTML = 'Log Out of The Mosh Pit';
+			} else {
+				document.getElementById('moshpitPrivate').innerHTML = '';
+				if (document.body.attributes.accessrequired) {
+					location = location + 'a';
+				}
+			}
 		} else {
-			document.getElementById('moshpitPrivate').innerHTML = '';
+		 document.getElementById('moshpitPrivate').innerHTML = '';
 			if (document.body.attributes.accessrequired) {
 				location = location + 'a';
 			}
-		}
-	} else {
-	 document.getElementById('moshpitPrivate').innerHTML = '';
-		if (document.body.attributes.accessrequired) {
-			location = location + 'a';
 		}
 	}
 	loadPrevDevTools();
