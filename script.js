@@ -34,7 +34,7 @@ let start = () => {
 	moshPitLogin.onclick = function() {
 		let pass = prompt('Mosh Pit Password');
 		if (pass == password) {
-			secure.save('hi', 'passkey', pass);
+			secure.save('hi ', 'passkey', pass);
 			location = location;
 		} else {
 			alert('Password is Wrong');
