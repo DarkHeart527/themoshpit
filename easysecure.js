@@ -3,7 +3,7 @@ let secure = {
 	disable: function() {
 		secure = '';
 	},
-	code: 'hi',
+	code: 'fawiub29cn',
 	save: function(code, name, data) {
 		if (code == unescape(this.code)) {
 			data = data;
