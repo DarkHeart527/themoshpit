@@ -1,3 +1,63 @@
+let app = {
+	errorLog: [],
+	console: {
+		log: console.log,
+		error: console.error,
+		info: console.info,
+	},
+	updateLogs: function() {
+		console.clear();
+		for (let i = 0; i < this.errorLog.length; i++) {
+			let type = this.errorLog[i].type;
+			let val = this.errorLog[i].val;
+			app.console[type](val);
+		}
+	},
+	log: function(val) {
+		this.errorLog[this.errorLog.length] = {type: 'log', val: val};
+		this.updateLogs();
+	},
+	error: function(val) {
+		this.errorLog[this.errorLog.length] = {type: 'error', val: val};
+		this.updateLogs();
+	},
+	info: function(val) {
+		this.errorLog[this.errorLog.length] = {type: 'info', val: val};
+		this.updateLogs();
+	},
+	'loadScript': function(val, backup) {
+		let source = val;
+		let loadScript = document.createElement('script');
+		loadScript.attributes.error = false;
+		loadScript.src = source;
+		loadScript.onerror = function() {
+			this.attributes.error = true;
+			if (backup) {
+					 if (loadScript.attributes.error == true) {
+						app.error(`Failed to load ${loadScript.src}`);
+						let sourceBackup = backup;
+						let loadScriptBackup = document.createElement('script');
+						loadScriptBackup.src = sourceBackup;
+						loadScriptBackup.onerror = function() {
+							app.error(`Failed to load ${loadScriptBackup.src}\nConsider checking if the file exists.`);
+						}
+						document.body.appendChild(loadScriptBackup);
+						return loadScriptBackup;
+					}
+			}
+		}
+		document.body.appendChild(loadScript);
+		setTimeout( function() {
+			if (loadScript.attributes.error == false) {
+				app.info(`${loadScript.src} successfully loaded.`);
+			}
+		}, 50);
+		if (loadScript.attributes.error == false) {
+			return loadScript;
+		}
+	}
+}
+
 let start = () => {
 	let explore = document.getElementsByClassName('explore')[0];
 	explore.attributes.isopen = false;
@@ -25,10 +85,7 @@ let start = () => {
 	
 	// Link setup append
 	
-	let source = 'linkSetup.js';
-	let nScript = document.createElement('script');
-	nScript.src = source;
-	document.body.appendChild(nScript);
+	let nScript = app.loadScript('linkSetup.js');
 	nScript.onload = function() {
 	let moshPitLogin = document.getElementById('login');
 	moshPitLogin.onclick = function() {
@@ -43,7 +100,7 @@ let start = () => {
 	let password = 'wdfna24j';
 		if (secure.load('passkey')) {
 			if (secure.load('passkey') == password) {
-				console.log('Logged in');
+				app.log('Logged in');
 				document.getElementById('login').onclick = function() {
 					secure.clear('passkey');
 					location = location;
@@ -62,6 +119,10 @@ let start = () => {
 			}
 		}
 	}
-	loadPrevDevTools();
+	let nodv = app.loadScript('noDevtools.js');
+	nodv.onload = function() {
+		loadPrevDevTools();
+	}
+	let userData = app.loadScript('https://themoshpit.github.io/themoshpit/userdata.js', 'userdata.js');
 }
 window.addEventListener('load', start);

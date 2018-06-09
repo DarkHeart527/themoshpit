@@ -3,10 +3,12 @@
 let links = {
 	'People': {
 		'DarkHeart Productions': 'darkheartproductions.html',
-		'Marvin Da Kid': 'marvindakid.html',
-		'RJ': '',
+		'MarvinDaKid': 'marvindakid.html',
+		'Hearteyeslover': '',
 		'Keanu': '',
-		'Raquan (I think it\'s spelled that way)': '',
+		'Blxck 15': '',
+		'Jalen': '',
+		'Anthony': '',
 	},
 	'Tracks': {
 	},

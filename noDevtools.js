@@ -53,7 +53,7 @@ function loadPrevDevTools() {
 	window.addEventListener('devtoolschange', function (e) {
 		if (e.detail.open == true) {
 		 alert('Please don\'t use Inspect Element here.\nYou have been sent to "about:blank".');
-		 location = 'about:blank';
+		 //location = 'about:blank';
 		} else {
 		 location = location;
 		}
