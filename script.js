@@ -6,12 +6,15 @@ let app = {
 		info: console.info,
 	},
 	updateLogs: function() {
-		console.clear();
+		//console.clear();
 		for (let i = 0; i < this.errorLog.length; i++) {
 			let type = this.errorLog[i].type;
 			let val = this.errorLog[i].val;
 			app.console[type](val);
 		}
+	},
+	getPersonData: function(person) {
+		
 	},
 	log: function(val) {
 		this.errorLog[this.errorLog.length] = {type: 'log', val: val};
@@ -51,7 +54,7 @@ let app = {
 			if (loadScript.attributes.error == false) {
 				app.info(`${loadScript.src} successfully loaded.`);
 			}
-		}, 50);
+		}, 100);
 		if (loadScript.attributes.error == false) {
 			return loadScript;
 		}
@@ -123,6 +126,5 @@ let start = () => {
 	nodv.onload = function() {
 		loadPrevDevTools();
 	}
-	let userData = app.loadScript('https://themoshpit.github.io/themoshpit/userdata.js', 'userdata.js');
 }
 window.addEventListener('load', start);

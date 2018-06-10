@@ -1,14 +1,14 @@
 (function() {
 	
-let links = {
+window.links = {
 	'People': {
-		'DarkHeart Productions': 'darkheartproductions.html',
-		'MarvinDaKid': 'marvindakid.html',
-		'Hearteyeslover': '',
-		'Keanu': '',
-		'Blxck 15': '',
-		'Jalen': '',
-		'Anthony': '',
+		//'DarkHeart Productions': 'person.html#darkheartproductions',
+		//'MarvinDaKid': 'person.html#marvindakid',
+		//'Hearteyeslover': 'person.html#hearteyeslover',
+		//'Keanu': 'person.html#keanu',
+		//'Blxck 15': 'person.html#blxck15',
+		//'Jalen': 'person.html#jalen',
+		//'Anthony': 'person.html#anthony',
 	},
 	'Tracks': {
 	},
@@ -19,7 +19,25 @@ let links = {
 		'private': true,
 	},
 }
-
+let data = pdata;
+for (let i = 0; i < Object.keys(data).length; i++) {
+	let nameDisplay;
+	
+	let uData = Object.keys(data)[i];
+	let link = uData;
+	uData = pdata[uData];
+	let nickName = uData.nickName;
+	let firstName = uData.firstName;
+	let lastName = uData.lastName;
+	let realNameVisible = uData.realNameVisible;
+	if (realNameVisible == true) {
+		nameDisplay = firstName + ' ' + lastName;
+	} else {
+		nameDisplay = nickName;
+	}
+	
+	links.People[nameDisplay] = `person#${link}`;
+}
 for (let i = 0; i < Object.keys(links).length; i++) {
 	let append = document.getElementsByClassName('links')[0];
 	
@@ -60,5 +78,4 @@ for (let i = 0; i < Object.keys(links).length; i++) {
 		}
 	}
 }
-
 }());
