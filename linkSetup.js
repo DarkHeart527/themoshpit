@@ -36,7 +36,7 @@ for (let i = 0; i < Object.keys(data).length; i++) {
 		nameDisplay = nickName;
 	}
 	
-	links.People[nameDisplay] = `person#${link}`;
+	links.People[nameDisplay] = `person.html#${link}`;
 }
 for (let i = 0; i < Object.keys(links).length; i++) {
 	let append = document.getElementsByClassName('links')[0];
