@@ -30,6 +30,7 @@ for (let i = 0; i < Object.keys(data).length; i++) {
 	let firstName = uData.firstName;
 	let lastName = uData.lastName;
 	let realNameVisible = uData.realNameVisible;
+	console.log(realNameVisible)
 	if (realNameVisible == true) {
 		nameDisplay = firstName + ' ' + lastName;
 	} else {

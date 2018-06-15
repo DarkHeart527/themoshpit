@@ -17,10 +17,31 @@
 			<div id="login">Moshpit Login</div>
 		</header>
 		<div class="page">
+			<div class="section">
+				<p class="sectionHeader">MarvinDaKid - I Won't Try On This Song (prod. Tobiaas)<p>
+				<iframe class="sciframe" style="margin: 0 auto; display: block;" width="50%" height="25%" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/447914592&color=%23ff5500auto_play=false&hide_related=true&show_comments=true&show_user=false&show_reposts=true&show_teaser=true&visual=true"></iframe>
+			</div>
+	<canvas style="position: absolute;top:15%;" id="canvas"></canvas>
 		</div>
 		<footer>
 		</footer>
 		<div class="links">
 		</div>
 	</body>
+	<script>
+	let canvas = document.getElementById('canvas');
+	canvas.width = innerWidth;
+	canvas.height = innerHeight / (100/75);
+	let stars = [];
+	let newStar = () => {
+		let star = {};
+		star.grow = 1;
+		star.maxSize = 10
+	}
+	let redraw = () => {
+		for (let i = 0; i < stars.length; i++) {
+		
+		}
+	}
+	</script>
 </html>

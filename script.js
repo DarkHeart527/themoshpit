@@ -68,16 +68,13 @@ let start = () => {
 		if (this.attributes.isopen == false) {
 		 this.attributes.isopen = true;
 		 document.getElementsByClassName('links')[0].style.top = '15%';
-		 //document.getElementsByClassName('links')[0].style.opacity = '1';
-		 document.getElementsByClassName('links')[0].style.zIndex = '-1';
+		 document.getElementsByClassName('links')[0].style.zIndex = '1';
 		 setTimeout( function() {
 			document.getElementsByClassName('links')[0].style.zIndex = '1';
 		}, 1000);
 		} else {
 		 this.attributes.isopen = false;
 		 document.getElementsByClassName('links')[0].style.top = '-100%';
-		 //document.getElementsByClassName('links')[0].style.opacity = '0';
-		 document.getElementsByClassName('links')[0].style.zIndex = '-1';
 		}
 	}
 	

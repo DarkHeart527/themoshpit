@@ -1,44 +1,55 @@
-
 * {
- color: initial;
+ color: white;
  font-size: initial;
 }
+
 body {
  margin: 0px;
+ background-color: black;
+ overflow: hidden;
 }
 .page {
  height: 75%;
  width: 100%;
+ background-color: black;
+ overflow-y: auto;
 }
 footer {
  width: 100%;
  height: 10%;
- background-color: rgba(155, 155, 155, 0.7);
+ background-color: rgba(0, 0, 0, 1);
  bottom: 0px;
  left: 0px;
+ border-top: 1px solid rgba(105, 0, 60, 1);
+ box-shadow: 0px 0px 25px rgb(105, 0, 60);
 }
 .links {
  position: absolute;
  left: 0px;
- background-color: green;
+ background-color: rgba(105, 0, 60, 0.8);
  top: -100%;
- transition: opacity 1.5s, top 1s;
+ transition: top 1s;
  width: 100%;
  height: 50%;
- border-bottom: 25px solid green;
+ border-bottom: 12.5px solid rgba(105, 0, 60, 1);
+ box-shadow: 0px 0px 25px rgb(105, 0, 60);
 }
 .links div {
  margin-left: 25px;
 }
+.hide {
+ visibility: hidden;
+}
 header {
  width: 100%;
  height: 15%;
- background-color: rgba(155, 155, 155, 0.7);
+ background-color: rgba(105, 0, 60, 1);
  display: grid;
  grid-template-columns: 1fr 1fr 1fr 1fr;
  justify-items: center;
  align-items: center;
  z-index: 1;
+ box-shadow: 0px 0px 25px rgb(105, 0, 60);
 }
 .explore {
  font-size: 30px;
@@ -53,5 +64,26 @@ header {
 }
 .links div a {
  margin-right: 25px;
+}
+#search {
+ visibility: hidden;
+}
+.sectionHeader {
+ color: rgb(105, 0, 60);
+ font-size: 30px;
+ text-align: center;
+ text-shadow: 25px -25px 5px rgb(155, 155, 155);
+}
 
+.sciframe {
+ border: 1px solid white;
+ border-radius: 10px;
+ background-color: rgba(0, 0, 0, 0.25);
+ opacity: 1;
+ box-shadow: 25px 20px 25px rgb(50, 50, 50);
+}
+
+.section {
+ position: relative;
+ z-index: 1;
 }
