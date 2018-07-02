@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<title>HashTag (#) Redirect (-->)</title>
+	</head>
+	<body style="background-color: black;">
+		<h1 style="color: white;"><a href=""></a></h1>
+	</body>
+	<script>
+		let loc = location.href;
+		loc = loc.split('#');
+		let tags = [];
+		for (let i = 2; i < loc.length; i++) {
+			tags[tags.length] = '#' + loc[i];
+		}
+		let newUrl = loc[1];
+		for (let j = 0; j < tags.length; j++) {
+			newUrl = newUrl + tags[j];
+		}
+		location = newUrl;
+		document.getElementsByTagName('a')[0].href = newUrl;
+	</script>
+</html>

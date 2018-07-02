@@ -28,6 +28,22 @@ let app = {
 		this.errorLog[this.errorLog.length] = {type: 'info', val: val};
 		this.updateLogs();
 	},
+	notifications: {
+		settings: {
+			showTime: '1 w',
+		},
+		update: function() {
+			
+		},
+		notifications: {
+			/*
+			2189641: {
+				seen: false,
+				msg: 'DarkHeart Productions has uploaded a new beat! <a href="somelink.html">Check it out</a>',
+			},
+			*/
+		},
+	},
 	'loadScript': function(val, backup) {
 		let source = val;
 		let loadScript = document.createElement('script');
@@ -97,7 +113,7 @@ let start = () => {
 			alert('Password is Wrong');
 		}
 	}
-	let password = 'wdfna24j';
+	let password = 'themoshpitpassword';
 		if (secure.load('passkey')) {
 			if (secure.load('passkey') == password) {
 				app.log('Logged in');
@@ -105,7 +121,7 @@ let start = () => {
 					secure.clear('passkey');
 					location = location;
 				};
-				document.getElementById('login').innerHTML = 'Log Out of The Moshpit';
+				document.getElementById('login').innerHTML = 'Log Out';
 			} else {
 				document.getElementById('moshpitPrivate').innerHTML = '';
 				if (document.body.attributes.accessrequired) {

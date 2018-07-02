@@ -27,7 +27,7 @@ let pdata = {
 		nickName: 'DarkHeart Productions', // The Name People Will See
 		age: 16, // Your Age
 		ageVisible: true, // Can People See Your Age? true (yes) | false (no)
-		bio: '', // Write About Yourself
+		bio: 'No Bio', // Write About Yourself
 		pictureUrl: 'none', // The Picture That Will Be Displayed
 			// On Your Profile, Put none For No Picture
 		position: 'Producer', // What Are You Considered In The Group?
@@ -43,6 +43,42 @@ let pdata = {
 		pictureUrl: 'none', // The Picture That Will Be Displayed
 			// On Your Profile, Put none For No Picture
 		position: 'Rapper', // What Are You Considered In The Group?
+	},
+	'blxck17':{
+		firstName: 'Raquan', // First Name
+		lastName: '?', // Last Name
+		realNameVisible: false, // Can People See Your Real Name? true (yes) | false (no)
+		nickName: 'Blxck17', // The Name People Will See
+		age: 0, // Your Age
+		ageVisible: false, // Can People See Your Age? true (yes) | false (no)
+		bio: 'No Bio', // Write About Yourself
+		pictureUrl: 'none', // The Picture That Will Be Displayed
+			// On Your Profile, Put none For No Picture
+		position: 'Rapper', // What Are You Considered In The Group?
+	},
+	'subzero': {
+		firstName: 'Keanu', // First Name
+		lastName: '', // Last Name
+		realNameVisible: false, // Can People See Your Real Name? true (yes) | false (no)
+		nickName: 'Subzero', // The Name People Will See
+		age: 0, // Your Age
+		ageVisible: false, // Can People See Your Age? true (yes) | false (no)
+		bio: 'No Bio', // Write About Yourself
+		pictureUrl: 'none', // The Picture That Will Be Displayed
+			// On Your Profile, Put none For No Picture
+		position: 'Rapper', // What Are You Considered In The Group?
+	},
+	'Jalen': {
+		firstName: 'Jalen', // First Name
+		lastName: '?', // Last Name
+		realNameVisible: false, // Can People See Your Real Name? true (yes) | false (no)
+		nickName: 'Jalen', // The Name People Will See
+		age: 0, // Your Age
+		ageVisible: false, // Can People See Your Age? true (yes) | false (no)
+		bio: 'No Bio', // Write About Yourself
+		pictureUrl: 'none', // The Picture That Will Be Displayed
+			// On Your Profile, Put none For No Picture
+		position: 'None', // What Are You Considered In The Group?
 	},
 	'hearteyeslover': {
 		firstName: '', // First Name

@@ -1,14 +1,11 @@
 (function() {
 	
 window.links = {
+	'Pages': {
+		'Home': 'index.html',
+		'People': '#',
+	},
 	'People': {
-		//'DarkHeart Productions': 'person.html#darkheartproductions',
-		//'MarvinDaKid': 'person.html#marvindakid',
-		//'Hearteyeslover': 'person.html#hearteyeslover',
-		//'Keanu': 'person.html#keanu',
-		//'Blxck 15': 'person.html#blxck15',
-		//'Jalen': 'person.html#jalen',
-		//'Anthony': 'person.html#anthony',
 	},
 	'Tracks': {
 	},
@@ -32,12 +29,33 @@ for (let i = 0; i < Object.keys(data).length; i++) {
 	let realNameVisible = uData.realNameVisible;
 	console.log(realNameVisible)
 	if (realNameVisible == true) {
-		nameDisplay = firstName + ' ' + lastName;
+		nameDisplay = firstName + ' ' + lastName + ' (' + nickName + ')';
 	} else {
 		nameDisplay = nickName;
 	}
+	// Handles Profiles
 	
-	links.People[nameDisplay] = `person.html#${link}`;
+	let curLink = location.href;
+	curLink = curLink.split('#');
+	curLink = curLink[1];
+	
+	if (link == curLink) {
+		if (uData.pictureUrl != 'none' && uData.pictureUrl != '') {
+			document.getElementById('profilePicture').src = uData.pictureUrl;	
+		}
+		if (uData.ageVisible == true) {
+			document.getElementById('age').innerHTML = 'Age: ' + uData.age;
+		}
+		if (uData.bio != 'No Bio' && uData.bio != 'none' && uData.bio != '' && uData.bio.toLowerCase() != 'None') {
+			document.getElementById('bio').innerHTML = uData.bio;
+		} else {
+			document.getElementById('bio').innerHTML = '<i>(No Bio)</i>';
+		}
+		document.getElementById('position').innerHTML = uData.position;
+		document.getElementById('name').innerHTML = nameDisplay;
+		document.getElementsByTagName('title')[0] = `${nameDisplay} - The Moshpit`;
+	}
+	links.People[nameDisplay] = `hashtagredirect.html#person.html#${link}`;
 }
 for (let i = 0; i < Object.keys(links).length; i++) {
 	let append = document.getElementsByClassName('links')[0];
